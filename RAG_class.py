@@ -32,8 +32,18 @@ class RAG:
                                   chain_type="stuff",
                                   retriever=self.retriever,
                                   return_source_documents=True)
-        
+                
     def make_query(self, query):
         self.llm_response = self.qa_chain(query)
 
         return process_llm_response(self.llm_response)
+    
+    def make_query_GUI(self, query):
+        self.llm_response = self.qa_chain(query)
+        # metadata_list = []
+        # for source in self.llm_response["source_documents"]:
+        #     print(source.metadata['source'])
+        #     metadata_list.append(source.metadata['source'])
+        return self.llm_response['result']
+
+    
