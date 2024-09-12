@@ -35,7 +35,7 @@ class HF_Pipeline:
 
                                                     )
 
-        # initilize the pipeline
+        # initilize the pipeline, the pipeline is used to generate the answer to the query
         self.pipe = pipeline(
             "text2text-generation",
             model=self.model,

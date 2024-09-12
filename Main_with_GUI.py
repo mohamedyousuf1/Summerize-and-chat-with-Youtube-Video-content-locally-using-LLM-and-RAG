@@ -10,7 +10,6 @@
 
 from langchain.llms import HuggingFacePipeline
 import gradio as gr
-import numpy as np
 from Models import *
 from RAG_class import *
 
@@ -66,15 +65,13 @@ class process_video:
             sum_texts = self.rag.text_splitter.split_text(summerized_text)
             for text in sum_texts:
                 if len(text) > 100:
-                    summ_text = self.HF_gen_pipeline.summarizer(text, max_length=100, min_length=20, do_sample=False)[0]['summary_text']
+                    summ_text = self.HF_gen_pipeline.summarizer(text, max_length=300, min_length=100, do_sample=False)[0]['summary_text']
                     summ_text += '\n'
                     summerized_summerized_text += summ_text  
             return summerized_summerized_text
 
         return summerized_text
-        
-        return summerized_text
-    
+            
     def process_query_button(self, query):
         return self.rag.make_query_GUI(query)
 
@@ -83,7 +80,7 @@ if __name__ == "__main__":
 
     prcess_video_class = process_video()
     with gr.Blocks() as demo:
-        # gr.Label("Enter a query to search for in the video:")
+        gr.Label("An experimental framework to summerize ad chat with the contentt of Youtube video")
         with gr.Row():
             with gr.Column():
                 video_url = gr.Text( label="Enter the video URL", placeholder="https://www.youtube.com/watch?v=7Pq-S557XQU")

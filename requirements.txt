@@ -8,3 +8,5 @@ pydub==0.25.1
 accelerate==0.34.2
 bitsandbytes==0.43.3
 torchvision==0.19.1
+torchaudio==2.4.1+cu121
+google-api-python-client==2.145.0
