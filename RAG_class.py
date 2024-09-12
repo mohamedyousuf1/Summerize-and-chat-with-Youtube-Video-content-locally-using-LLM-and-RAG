@@ -10,7 +10,7 @@ class RAG:
         self.instructor_embeddings = HuggingFaceInstructEmbeddings(model_name="hkunlp/instructor-xl",
                                                       model_kwargs={"device": "cuda"}, cache_folder="instructor_cache")
         self.text_splitter = RecursiveCharacterTextSplitter(chunk_size=4000, chunk_overlap=50, separators=["\n\n", "\n", ".", " ", ""] )
-
+        
         self.persist_directory = 'YT_video' # directory to save the embeddings vectors
 
     def process_YT_url(self,video_URL, local_llm):
@@ -32,6 +32,7 @@ class RAG:
                                   chain_type="stuff",
                                   retriever=self.retriever,
                                   return_source_documents=True)
+        return self.texts
                 
     def make_query(self, query):
         self.llm_response = self.qa_chain(query)
