@@ -15,19 +15,47 @@ from Models import *
 from RAG_class import *
 
 class process_video:
+    '''
+    The process_video class contains the following methods:
+        __init__: This method is used to initialize the process_video class.
+        process_url_button: This method is used to process the youtube video URL.
+        process_summary_button: This method is used to process the summary button.
+        process_query_button: This method is used to process the query button.
+        
+        Attributes:
+            video_url: The video URL.
+            HF_gen_pipeline: The HF_gen_pipeline is loaded from the HF_Pipeline model.
+            local_llm: The local_llm is loaded from the HuggingFacePipeline model.
+            rag: The rag is loaded from the RAG model.
+            summerize_list_texts: The summerize_list_texts is set to None.
+            
+        Methods:
+            process_url_button: This method is used to process the youtube video URL.
+            process_summary_button: This method is used to process the summary button.
+            process_query_button: This method is used to process the query button.
+            
+    '''
     def __init__(self):
         # Load the pipeline
         self.video_url = None
+
+        # Load the HF_gen_pipeline
         self.HF_gen_pipeline = HF_Pipeline()
+
+        # Load the local_llm, which is used to generate the answer to the query
         self.local_llm = HuggingFacePipeline(pipeline = self.HF_gen_pipeline.pipe)
         # check if the pipeline is working, uncomment the next line to test
         # print(local_llm('What is the capital of England?'))
+
+        # Load the rag, which is used to process the youtube video URL
         self.rag = RAG()
         self.summerize_list_texts = None
 
 
     def process_url_button(self, video_url):
         self.video_url = video_url
+
+        # process the youtube video URL
         self.summerize_list_texts = self.rag.process_YT_url( self.video_url, self.local_llm)
         return get_youtube_thumbnail_image(self.video_url)
     

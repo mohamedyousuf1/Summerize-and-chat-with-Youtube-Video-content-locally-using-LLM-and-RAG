@@ -1,3 +1,23 @@
+'''
+This class is used to load the model and tokenizer from the Hugging Face model hub.
+The model is loaded from the google/flan-t5-xl model and the tokenizer is loaded from the same model.
+The pipeline is initialized with the model and tokenizer.
+
+The pipeline is used to generate the answer to the query.
+The pipeline is also used to summarize the list of texts that are extracted and splitted already.
+
+The pipeline is also used to summarize the list of texts that are extracted and splitted already.
+
+Attributes:
+    tokenizer: The tokenizer is loaded from the google/flan-t5-xl model.
+    model: The model is loaded from the google/flan-t5-xl model.
+    pipe: The pipeline is initialized with the model and tokenizer.
+    summerizer: The summarizer is loaded from the facebook/bart-large-cnn model.
+
+Methods:
+    summerize_list_texts: This method is used to summarize the list of texts that are extracted and splitted already.
+
+'''
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 from transformers import pipeline
 
