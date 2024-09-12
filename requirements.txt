@@ -1,0 +1,10 @@
+gradio==4.44.0
+tiktoken==0.7.0
+langchain==0.2.16
+transformers==4.44.2
+sentence-transformers==2.2.2
+torch==2.4.1+cu121
+pydub==0.25.1
+accelerate==0.34.2
+bitsandbytes==0.43.3
+torchvision==0.19.1
