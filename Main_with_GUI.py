@@ -94,7 +94,7 @@ if __name__ == "__main__":
 
         with gr.Row():
             summerize_output = gr.Textbox( label="Video Summary", placeholder="The video summerization will be displayed here")
-            result = gr.Text()
+            result = gr.Text( label="The answer to your query will be displayed here")
 
         URLbutton.click(fn=prcess_video_class.process_url_button , inputs=[video_url], outputs=[Thumbnail_image])
         summerize_button.click(fn=prcess_video_class.process_summary_button , outputs=[summerize_output])
