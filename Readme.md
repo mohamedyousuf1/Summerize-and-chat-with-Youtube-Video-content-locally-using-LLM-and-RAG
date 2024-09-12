@@ -1,4 +1,4 @@
-# Video Processing with LangChain and Gradio locally using AI and RAG
+# Video Processing with LangChain and Gradio locally using LLM and RAG
 
 This project processes YouTube videos to generate summaries using LangChain, HuggingFace, and Gradio. It includes a graphical user interface (GUI) for ease of use.
 
