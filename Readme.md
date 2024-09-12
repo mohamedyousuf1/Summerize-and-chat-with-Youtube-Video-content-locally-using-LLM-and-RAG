@@ -1,4 +1,4 @@
-# Video Processing with LangChain and Gradio locally using AI and RAG
+# Video Processing with LangChain and Gradio locally using LLM and RAG
 
 This project processes YouTube videos to generate summaries using LangChain, HuggingFace, and Gradio. It includes a graphical user interface (GUI) for ease of use.
 
@@ -30,7 +30,7 @@ The better case is using OpenAI API, but it costs money for every process.
     ```sh
     python Main_with_GUI.py
     ```
-3. In the terminal, a local URL appears, use it on the browser to open the GUI.
+3. In the terminal, a local URL appears, use it on the browser to get the GUI.
 
 ## Usage
 
