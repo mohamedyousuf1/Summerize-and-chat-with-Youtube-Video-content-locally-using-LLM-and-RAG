@@ -6,7 +6,7 @@ This project processes YouTube videos to generate summaries using LangChain, Hug
 The better case is using OpenAI API, but it costs money for every process.
 
 
-![The GUI](GUI.jpg)
+![The GUI screenshot.](GUI.jpg)
 
 ## Prerequisites
 
