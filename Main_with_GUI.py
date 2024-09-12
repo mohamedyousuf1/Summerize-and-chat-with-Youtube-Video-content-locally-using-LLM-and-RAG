@@ -80,7 +80,7 @@ if __name__ == "__main__":
 
     prcess_video_class = process_video()
     with gr.Blocks() as demo:
-        gr.Label("An experimental framework to summerize ad chat with the contentt of Youtube video")
+        gr.Label("A local LLM framework to summerize and chat with the content of a Youtube video")
         with gr.Row():
             with gr.Column():
                 video_url = gr.Text( label="Enter the video URL", placeholder="https://www.youtube.com/watch?v=7Pq-S557XQU")
